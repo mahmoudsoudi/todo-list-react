@@ -1,13 +1,9 @@
 
-
+import React,{ useState } from 'react'
+import TodoItem from "./TodoItem"
 export default function TodoList(props){
-  
-    const items = props.items.map( i=> <li id="item{i.key}">
-        {i.value} is {i.status}
-        <button onClick={()=>i.donethis(i.key)}>
-            done
-        </button>
-        </li> )
+
+    const items = props!=undefined?props.items.map( i=>(<TodoItem status={i.status} value={i.value} key={i.id} id={i.id}/>)):[]
     return (
         <div className="todo--list">
             <ul>

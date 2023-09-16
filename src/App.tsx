@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React,{ useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
@@ -8,16 +8,16 @@ import './App.css'
 function App() {
   const [todos, setTodos] = useState([])
   const [count, setCount] = useState(0)
-  function donethis(itemId){
-    let nettodos = todos;
+  // function donethis(itemId){
+    // let nettodos = todos;
     // nettodos[itemId].status = "complete"
-    console.log(itemId)
-    console.log(todos)
+    // console.log(itemId)
+    // console.log(todos)
     // setTodos({items:nettodos})
 
-  }
+  // }
   function addTodo(){
-    setTodos(prevlist => [...prevlist,{value:x.value,status:"incomplete",key:count,donethis:donethis}])
+    setTodos(prevlist => [...prevlist,{value:x.value,status:false,id:count}])//,donethis:donethis
     setCount(oldcount=>oldcount +1)
   }
   function clearList(){
